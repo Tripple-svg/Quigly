@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quigly</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- 1. HEADER & PROGRESS -->
+        <header class="app-header">
+            <div class="brand">
+                <h1><i class="fa-solid fa-bolt"></i> Quigly</h1>
+                <p>The smart way to organize.</p>
+            </div>
+            <button id="theme-toggle" class="icon-btn">
+                <i class="fa-solid fa-sun"></i>
+            </button>
+        </header>
+
+        <div class="progress-section">
+            <div class="progress-text">
+                <span>Progress</span>
+                <span id="progress-percentage">0%</span>
+            </div>
+            <div class="progress-bar-bg">
+                <div id="progress-bar-fill" class="progress-bar-fill"></div>
+            </div>
+        </div>
+
+        <!-- 2. INPUT FORM -->
+        <form id="task-form" class="task-form">
+            <div class="input-group">
+                <input type="text" id="task-input" placeholder="What needs to be done?" autocomplete="off">
+                <button type="submit" id="add-btn"><i class="fa-solid fa-plus"></i></button>
+            </div>
+            
+            <div class="options-group">
+                <select id="task-category">
+                    <option value="Personal">Personal</option>
+                    <option value="Work">Work</option>
+                    <option value="Study">Study</option>
+                </select>
+                <select id="task-priority">
+                    <option value="Low">Low Priority</option>
+                    <option value="Medium">Medium Priority</option>
+                    <option value="High">High Priority</option>
+                </select>
+            </div>
+        </form>
+
+        <!-- 3. SEARCH & FILTERS -->
+        <div class="controls">
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="search-input" placeholder="Search tasks...">
+            </div>
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="active">Active</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+            </div>
+        </div>
+
+        <!-- 4. THE TASK LIST (JavaScript will inject here) -->
+        <ul id="task-list" class="task-list">
+            <!-- Task items will go here -->
+        </ul>
+
+        <!-- 5. FOOTER & COUNTER -->
+        <footer class="app-footer">
+            <span id="task-counter">0 tasks left</span>
+            <button id="clear-completed">Clear Completed</button>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
