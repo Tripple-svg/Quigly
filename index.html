@@ -10,6 +10,15 @@
 </head>
 <body>
 
+    <div id="preloader">
+        <div class="preloader-content">
+            <h1 class="preloader-text">QUIGLY</h1>
+            <svg class="preloader-line" viewBox="0 0 200 10" preserveAspectRatio="none">
+                <path d="M0,5 L200,5" stroke="#74B9FF" stroke-width="4" stroke-linecap="round"/>
+            </svg>
+        </div>
+    </div>
+
     <div class="app-container">
         <!-- 1. HEADER & PROGRESS -->
         <header class="app-header">
@@ -71,10 +80,16 @@
             <!-- Task items will go here -->
         </ul>
 
-        <!-- 5. FOOTER & COUNTER -->
         <footer class="app-footer">
-            <span id="task-counter">0 tasks left</span>
-            <button id="clear-completed">Clear Completed</button>
+
+            <div class="footer-main">
+                <span id="task-counter">0 tasks left</span>
+                <button id="clear-completed">Clear Completed</button>
+            </div>
+
+            <div class="bottom">
+            <p>&copy; 2026 Quigly. All rights reserved.<br> Built by JayyTee</p>
+            </div>
         </footer>
     </div>
 

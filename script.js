@@ -1,6 +1,12 @@
-// ==========================================
-// QUIGLY TASK MANAGER - CORE LOGIC
-// ==========================================
+// --- PRELOADER LOGIC ---
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    
+    // Wait for 1.5 seconds (to let the line draw animation finish)
+    setTimeout(() => {
+        preloader.classList.add('fade-out');
+    }, 1500);
+});
 
 // 1. STATE & SELECTIONS
 // We store all our tasks in this array.
