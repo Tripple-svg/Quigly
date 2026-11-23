@@ -20,7 +20,6 @@
     </div>
 
     <div class="app-container">
-        <!-- 1. HEADER & PROGRESS -->
         <header class="app-header">
             <div class="brand">
                 <h1><i class="fa-solid fa-bolt"></i> Quigly</h1>
@@ -41,7 +40,6 @@
             </div>
         </div>
 
-        <!-- 2. INPUT FORM -->
         <form id="task-form" class="task-form">
             <div class="input-group">
                 <input type="text" id="task-input" placeholder="What needs to be done?" autocomplete="off">
@@ -62,7 +60,6 @@
             </div>
         </form>
 
-        <!-- 3. SEARCH & FILTERS -->
         <div class="controls">
             <div class="search-box">
                 <i class="fa-solid fa-magnifying-glass"></i>
@@ -75,9 +72,8 @@
             </div>
         </div>
 
-        <!-- 4. THE TASK LIST (JavaScript will inject here) -->
         <ul id="task-list" class="task-list">
-            <!-- Task items will go here -->
+            <li class="empty-state">No tasks to display.</li>
         </ul>
 
         <footer class="app-footer">

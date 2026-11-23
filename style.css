@@ -3,14 +3,13 @@ html{
     overflow-x: hidden;
 }
 
-/* --- PRELOADER --- */
 #preloader {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #1E2025; /* Matches your slate ash background */
+    background-color: #baac8d;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,7 +31,7 @@ html{
 }
 
 .preloader-text {
-    color: #EADBC8; /* Beige */
+    color: #000000;
     font-size: 3rem;
     letter-spacing: 10px;
     margin: 0;
@@ -42,10 +41,8 @@ html{
 .preloader-line {
     width: 200px;
     height: 10px;
-    /* This hides the line initially */
     stroke-dasharray: 200;
     stroke-dashoffset: 200;
-    /* This animates the line drawing */
     animation: drawLine 1s ease-out forwards;
 }
 
@@ -57,17 +54,16 @@ html{
 
 
 :root {
-    --bg-body: #1E2025; /* Rich, sophisticated slate ash */
-    --bg-card: #EADBC8; /* Genuine warm beige */
-    --text-main: #2C3E50; /* Deep slate blue */
+    --bg-body: #1E2025;
+    --bg-card: #EADBC8;
+    --text-main: #2C3E50;
     --text-muted: #5D6D7E; 
-    --accent-blue: #74B9FF; /* Professional Sky Blue */
+    --accent-blue: #74B9FF;
     --accent-blue-hover: #0984E3;
-    --input-bg: #F8F4EC; /* Soft cream for inputs */
+    --input-bg: #F8F4EC;
     --border-color: rgba(44, 62, 80, 0.15);
-    --shadow: 0 25px 50px rgba(0, 0, 0, 0.4); /* Deeper, softer shadow */
+    --shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
     
-    /* Tag Colors */
     --tag-work-bg: #E0F2FE; --tag-work-text: #0369A1;
     --tag-personal-bg: #FCE7F3; --tag-personal-text: #BE185D;
     --tag-study-bg: #FEF08A; --tag-study-text: #854D0E;
@@ -77,10 +73,9 @@ html{
     --tag-low-bg: #DCFCE7; --tag-low-text: #15803D;
 }
 
-/* Light Mode Toggle Overrides (Ash Outer, Dark Card) */
 body.light-mode {
-    --bg-body: #dee6c1; /* Soft ash gray background */
-    --bg-card: #1E293B; /* Deep Navy Card */
+    --bg-body: #dee6c1;
+    --bg-card: #1E293B;
     --text-main: #F8FAFC;
     --text-muted: #94A3B8;
     --input-bg: #0F172A;
@@ -88,7 +83,6 @@ body.light-mode {
     --shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
 }
 
-/* --- GLOBAL --- */
 * {
     margin: 0;
     padding: 0;
@@ -107,7 +101,6 @@ body {
     padding: 40px 20px;
 }
 
-/* --- APP CONTAINER (The Beige Card) --- */
 .app-container {
     width: 100%;
     max-width: 650px;
@@ -117,7 +110,6 @@ body {
     box-shadow: var(--shadow);
 }
 
-/* --- HEADER --- */
 .app-header {
     display: flex;
     justify-content: space-between;
@@ -165,7 +157,6 @@ Body.light-mode .brand p {
     background: var(--border-color);
 }
 
-/* --- PROGRESS BAR --- */
 .progress-section {
     margin-bottom: 30px;
 }
@@ -189,13 +180,12 @@ Body.light-mode .brand p {
 
 .progress-bar-fill {
     height: 100%;
-    width: 0%; /* JS will change this */
+    width: 0%;
     background: var(--accent-blue);
     border-radius: 10px;
     transition: width 0.4s ease;
 }
 
-/* --- FORM & INPUTS --- */
 .task-form {
     display: flex;
     flex-direction: column;
@@ -269,7 +259,6 @@ Body.light-mode .brand p {
     color: var(--text-main);
 }
 
-/* --- CONTROLS (Search & Filters) --- */
 .controls {
     display: flex;
     flex-direction: column;
@@ -326,7 +315,18 @@ Body.light-mode .brand p {
     color: var(--text-main);
 }
 
-/* --- TASK LIST --- */
+.empty-state {
+    text-align: center;
+    padding: 30px;
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 1rem;
+    font-style: italic;
+    background: var(--input-bg);
+    border-radius: 16px;
+    border: 1px dashed var(--border-color);
+}
+
 .task-list {
     list-style: none;
     display: flex;
@@ -383,7 +383,6 @@ Body.light-mode .brand p {
     opacity: 0.4;
 }
 
-/* Tags */
 .task-tags {
     display: flex;
     gap: 8px;
@@ -407,7 +406,6 @@ Body.light-mode .brand p {
 .tag.medium { background: var(--tag-med-bg); color: var(--tag-med-text); }
 .tag.low { background: var(--tag-low-bg); color: var(--tag-low-text); }
 
-/* Action Buttons */
 .task-actions {
     display: flex;
     gap: 15px;
@@ -438,7 +436,7 @@ Body.light-mode .brand p {
 .footer-main{
     display:flex;
     justify-content: space-between;
-    gap: 150px;
+    gap: 15px;
     align-items: center;
     width: 100%;
     font-size: 0.95rem;
@@ -464,7 +462,6 @@ Body.light-mode .brand p {
 
 #clear-completed:hover { color: #ef4444; }
 
-/* --- MOBILE OPTIMIZATION --- */
 @media (max-width: 600px) {
     .app-container { padding: 25px; border-radius: 20px; }
     .options-group { flex-direction: column; }
@@ -473,13 +470,13 @@ Body.light-mode .brand p {
     .task-actions { align-self: flex-end; width: 100%; justify-content: flex-end;}
 }
 
-/* Add these inside your @media (max-width: 600px) block */
 .input-group input {
-    min-width: 0; /* Fixes the overflow bug */
-    padding: 14px 15px; /* Slightly smaller padding for mobile */
+    min-width: 0;
+    padding: 14px 15px;
 }
+
 #add-btn {
-    padding: 0 18px; /* Slightly smaller button */
+    padding: 0 18px;
 }
 
 .bottom {
