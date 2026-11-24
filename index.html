@@ -41,10 +41,7 @@
         </div>
 
         <form id="task-form" class="task-form">
-            <div class="input-group">
-                <input type="text" id="task-input" placeholder="What needs to be done?" autocomplete="off">
-                <button type="submit" id="add-btn"><i class="fa-solid fa-plus"></i></button>
-            </div>
+            <input type="text" id="task-input" placeholder="What needs to be done?" autocomplete="off">
             
             <div class="options-group">
                 <select id="task-category">
@@ -58,6 +55,8 @@
                     <option value="High">High Priority</option>
                 </select>
             </div>
+
+            <button type="submit" id="add-btn">Add Task <i class="fa-solid fa-plus"></i></button>
         </form>
 
         <div class="controls">
@@ -77,14 +76,12 @@
         </ul>
 
         <footer class="app-footer">
-
             <div class="footer-main">
                 <span id="task-counter">0 tasks left</span>
                 <button id="clear-completed">Clear Completed</button>
             </div>
-
             <div class="bottom">
-            <p>&copy; 2026 Quigly. All rights reserved.<br> Built by JayyTee</p>
+                <p>&copy; 2026 Quigly. All rights reserved.<br> Built by JayyTee</p>
             </div>
         </footer>
     </div>

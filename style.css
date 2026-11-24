@@ -1,4 +1,4 @@
-html{
+html {
     scroll-behavior: smooth;
     overflow-x: hidden;
 }
@@ -52,8 +52,7 @@ html{
     }
 }
 
-
-:root {
+:root { /*Core colours of the web theme*/
     --bg-body: #1E2025;
     --bg-card: #EADBC8;
     --text-main: #2C3E50;
@@ -126,7 +125,7 @@ body {
     letter-spacing: -0.5px;
 }
 
-Body.light-mode .brand h1 {
+body.light-mode .brand h1 {
     color: #ffffff;
 }
 
@@ -137,7 +136,7 @@ Body.light-mode .brand h1 {
     font-weight: 500;
 }
 
-Body.light-mode .brand p {
+body.light-mode .brand p {
     color: #94A3B8;
 }
 
@@ -193,13 +192,8 @@ Body.light-mode .brand p {
     margin-bottom: 30px;
 }
 
-.input-group {
-    display: flex;
-    gap: 12px;
-}
-
-.input-group input {
-    flex: 1;
+#task-input {
+    width: 100%;
     background: var(--input-bg);
     border: 1px solid var(--border-color);
     padding: 16px 20px;
@@ -208,32 +202,15 @@ Body.light-mode .brand p {
     font-size: 1rem;
     outline: none;
     font-weight: 500;
-    min-width: 0;
 }
 
-.input-group input:focus {
+#task-input:focus {
     border-color: var(--accent-blue);
 }
 
-.input-group input::placeholder {
+#task-input::placeholder {
     color: var(--text-muted);
     opacity: 0.8;
-}
-
-#add-btn {
-    background: var(--accent-blue);
-    color: #ffffff;
-    border: none;
-    padding: 0 24px;
-    border-radius: 14px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: transform 0.2s ease, background 0.2s;
-}
-
-#add-btn:hover { 
-    background: var(--accent-blue-hover);
-    transform: scale(1.05); 
 }
 
 .options-group {
@@ -259,6 +236,28 @@ Body.light-mode .brand p {
     color: var(--text-main);
 }
 
+#add-btn {
+    width: 100%;
+    background: var(--accent-blue);
+    color: #ffffff;
+    border: none;
+    padding: 16px;
+    border-radius: 14px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: transform 0.2s ease, background 0.2s;
+}
+
+#add-btn:hover { 
+    background: var(--accent-blue-hover);
+    transform: scale(1.02); 
+}
+
 .controls {
     display: flex;
     flex-direction: column;
@@ -275,7 +274,10 @@ Body.light-mode .brand p {
     border-radius: 14px;
 }
 
-.search-box i { color: var(--text-muted); margin-right: 12px; }
+.search-box i { 
+    color: var(--text-muted); 
+    margin-right: 12px; 
+}
 
 .search-box input {
     background: none;
@@ -286,7 +288,11 @@ Body.light-mode .brand p {
     font-size: 1rem;
     font-weight: 500;
 }
-.search-box input::placeholder { color: var(--text-muted); opacity: 0.8; }
+
+.search-box input::placeholder { 
+    color: var(--text-muted); 
+    opacity: 0.8; 
+}
 
 .filters {
     display: flex;
@@ -338,8 +344,14 @@ Body.light-mode .brand p {
     padding-right: 5px;
 }
 
-.task-list::-webkit-scrollbar { width: 6px; }
-.task-list::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 10px; }
+.task-list::-webkit-scrollbar { 
+    width: 6px; 
+}
+
+.task-list::-webkit-scrollbar-thumb { 
+    background: var(--border-color); 
+    border-radius: 10px; 
+}
 
 .task-item {
     display: flex;
@@ -398,13 +410,35 @@ Body.light-mode .brand p {
     text-transform: uppercase;
 }
 
-.tag.work { background: var(--tag-work-bg); color: var(--tag-work-text); }
-.tag.personal { background: var(--tag-personal-bg); color: var(--tag-personal-text); }
-.tag.study { background: var(--tag-study-bg); color: var(--tag-study-text); }
+.tag.work { 
+    background: var(--tag-work-bg); 
+    color: var(--tag-work-text); 
+}
 
-.tag.high { background: var(--tag-high-bg); color: var(--tag-high-text); }
-.tag.medium { background: var(--tag-med-bg); color: var(--tag-med-text); }
-.tag.low { background: var(--tag-low-bg); color: var(--tag-low-text); }
+.tag.personal { 
+    background: var(--tag-personal-bg); 
+    color: var(--tag-personal-text); 
+}
+
+.tag.study { 
+    background: var(--tag-study-bg); 
+    color: var(--tag-study-text); 
+}
+
+.tag.high { 
+    background: var(--tag-high-bg); 
+    color: var(--tag-high-text); 
+}
+
+.tag.medium { 
+    background: var(--tag-med-bg); 
+    color: var(--tag-med-text); 
+}
+
+.tag.low { 
+    background: var(--tag-low-bg); 
+    color: var(--tag-low-text); 
+}
 
 .task-actions {
     display: flex;
@@ -424,7 +458,10 @@ Body.light-mode .brand p {
     color: var(--accent-blue); 
     transform: scale(1.1);
 }
-.task-actions button.delete-btn:hover { color: #ef4444; }
+
+.task-actions button.delete-btn:hover { 
+    color: #ef4444; 
+}
 
 .app-footer {
     display: flex;
@@ -433,19 +470,20 @@ Body.light-mode .brand p {
     padding-top: 25px;
 }
 
-.footer-main{
-    display:flex;
+.footer-main {
+    display: flex;
     justify-content: space-between;
     gap: 15px;
     align-items: center;
     width: 100%;
     font-size: 0.95rem;
-    font-weight:700;
+    font-weight: 700;
     color: var(--text-muted);
 }
 
 .bottom {
     text-align: center;
+    margin-top: 20px;
     font-size: 0.85rem;
     color: var(--text-muted);
     opacity: 0.8;
@@ -460,28 +498,30 @@ Body.light-mode .brand p {
     transition: color 0.3s ease;
 }
 
-#clear-completed:hover { color: #ef4444; }
+#clear-completed:hover { 
+    color: #ef4444; 
+}
 
 @media (max-width: 600px) {
-    .app-container { padding: 25px; border-radius: 20px; }
-    .options-group { flex-direction: column; }
-    .filters { flex-wrap: wrap; justify-content: center; }
-    .task-item { flex-direction: column; align-items: flex-start; gap: 15px; }
-    .task-actions { align-self: flex-end; width: 100%; justify-content: flex-end;}
-}
-
-.input-group input {
-    min-width: 0;
-    padding: 14px 15px;
-}
-
-#add-btn {
-    padding: 0 18px;
-}
-
-.bottom {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 0.85rem;
-    color: var(--text-muted);
+    .app-container { 
+        padding: 25px; 
+        border-radius: 20px; 
+    }
+    .options-group { 
+        flex-direction: column; 
+    }
+    .filters { 
+        flex-wrap: wrap; 
+        justify-content: center; 
+    }
+    .task-item { 
+        flex-direction: column; 
+        align-items: flex-start; 
+        gap: 15px; 
+    }
+    .task-actions { 
+        align-self: flex-end; 
+        width: 100%; 
+        justify-content: flex-end;
+    }
 }
